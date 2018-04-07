@@ -16,4 +16,4 @@ IEnumerable<ListNode<T>> GetListNodeEnumerable<T>(ListNode<T> start) {
 }
 ```
 
-For example, the problem of finding if a linked list is a palindrome can be solved with some simple Linq operations once the ListNode can be converted to an IEnumerable.  [Code Fights Solution](https://codefights.com/interview-practice/task/HmNvEkfFShPhREMn4)
+For example, the problem of finding if a linked list is a palindrome can be solved with some simple Linq operations once the ListNode can be converted to an IEnumerable.  [Code Fights Solution](https://codefights.com/interview-practice/task/HmNvEkfFShPhREMn4/solutions/CbEfp9SRFJd24xGsT)
