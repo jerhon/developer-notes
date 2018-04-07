@@ -51,7 +51,7 @@ https://docs.docker.com/install/windows/docker-ee/
 
 These commands should do it:
 
-```
+```powershell
 Install-Module DockerMsftProvider -Force
 Install-Package Docker -ProviderName DockerMsftProvider -Force
 Start-Service Docker
@@ -59,6 +59,6 @@ Start-Service Docker
 
 ## Configure Docker
 If you have any custom configuration options for docker, do it through the config file. Add "C:\programdata\docker\config\daemon.json" with any settings. Typically I'll have one or more insecure registries set up.
-```
-{"insecure-registries":[]}
+```json
+{ "insecure-registries": [] }
 ```
