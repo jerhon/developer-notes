@@ -7,7 +7,7 @@ A binary tree is a tree where each node contains two child nodes. Commonly the t
 Many tree problems require iterating through a tree to find a solution.  A generator function or an IEnumerable<> in C# can make many of these problems much easier to solve. For example the method below would allow enumeration through the tree giving us each path that it encounters (even including intermediate paths.)
 
 
-```C#
+```csharp
 // represents a tree path
 class TreePath<T> {
     public TreePath() { }
@@ -51,7 +51,7 @@ Any path that terminates with a node where right == null && left == null is a le
 
 ## Tree Reference Class
 
-```C#
+```csharp
 class Tree<T> {
   public T value { get; set; }
   public Tree<T> left { get; set; }

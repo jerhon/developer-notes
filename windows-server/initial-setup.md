@@ -1,6 +1,6 @@
 # Windows Server Initial Setup
 
-Some basic commands to get Windows Server off the ground running from the commandline.  I last used this against Windows Server 2016.
+Some basic commands to get Windows Server off the ground running from the command line.  I last used this against Windows Server 2016.  I wanted to learn the powershell commands so that I didn't have to manually use the GUI.
 
 # Initial Configuration Steps
 
