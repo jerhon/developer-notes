@@ -2,6 +2,8 @@
 
 These are several common commands used in the mongo shell.
 
+# Common
+
 ## Switch the Database
 
 Switch the database in the MongoDB shell.  It's very non-javascript.
