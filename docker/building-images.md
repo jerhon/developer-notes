@@ -9,7 +9,7 @@ docker build -t application-name .
 Typically each image is tagged with one or more tags.  The tags can be used to describe the image.  They are also used to denote a repository the images can pushed to.
 
 ```
-docker build -t myrepository/application-name .
+docker build -t myrepository:port/application-name .
 ```
 
 When Dockerfiles are structured, they usually are built with a base image.  Additional layers are stacked on top of that base image by running commands in the Docker file.  For example, copying new files into an image would create an additional layer in which those files are stored. This makes storage of containers very efficient.  

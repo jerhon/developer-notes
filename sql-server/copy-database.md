@@ -2,7 +2,7 @@
 
 The task to copy a database in Microsoft SQL Management Studio is notoriously buggy.  I often get object reference errors, issues with permissions in SQL Agent, etc.  If you can get everything set up just right, sometimes it will work.  However, the benefits of using SQL Agent in scenarios when you have access to the server and can do the same thing in a few steps is minor.
 
-## Detach, Copy, Attach Method
+# Detach, Copy, Attach Method
 
 Using this method, we detach a database, copy it, and attach the old database and the new database.
 
@@ -35,3 +35,7 @@ CREATE DATABASE [<DB_NAME_HERE>] ON
  FOR ATTACH
 GO
 ```
+## Questions
+### Why do I need to detatch/reattach the original?
+
+This is done so the DB is in a well known state prior to be copied to a new instance.  If the DB is some state writing to the DB, or TX log, it's possible to miss transactions in the new DB so you'll actually get an old version of the DB.  Thus it's better to take the database down to get an exact copy.
