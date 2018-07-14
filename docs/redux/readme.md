@@ -10,6 +10,7 @@ At first dealing with Redux can be a somewhat daunting task.  However, it is rea
 * Well defined pattern for state storage.
 * Single state can be stored and retrieved later, for example in local storage, or passed on to the server.
 * Debugging tools can be used to easily check internal application state without having to complex debuging sessions.
+* Immutable state changes.
 
 
 ## Why not Redux?
@@ -20,7 +21,7 @@ At first dealing with Redux can be a somewhat daunting task.  However, it is rea
 There are several pieces and terms that are important to understand in Redux.
 
 * Dispatch - This is a function used to issue "actions".
-* Action - This is an object which represents a state change in the store.  Thus it is coined an action not because it does something, but because it is what will change 
+* Action - This is an object which represents a state change in the store.  Thus it is coined an action not because it does something, but because it describes what should change.
 * Reducer - This takes actions and applies the state change to the store.
 * Store - This is where the state is kept track of.
 
