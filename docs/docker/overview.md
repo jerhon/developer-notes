@@ -2,6 +2,24 @@
 
 Docker is a technology to create and run containers.  A container is a image that when executed run within an isolated environment in the OS.  Each image is comprised of several layers which are built upon each other which when stacked result in a running application.
 
+
+
+
+
+
+# Repositories
+
+A docker repository is a place were images of an application can be stored in order to later retrieve and run them from other hosts.  A repository can be set up on any machine running docker.
+
+# Options for Hosting
+
+## Dockerhub
+This is a hosted service for saving and distributing container images.
+
+
+
+
+
 ## Why Docker?
 
 ### Docker allows you to bundle all your dependencies.  
