@@ -17,14 +17,15 @@
       name: "Developer Notes",
       repo: 'https://github.com/jerhon/developer-notes',
       loadSidebar: true,
-      subMaxLevel: 1,
+      subMaxLevel: 0,
       homepage: 'readme.md',
-      basePath: '/',
-      basePath: 'https://jerhon.github.io/developer-notes/'
+      basePath: window.location.href.indexOf("localhost") >= 0 ? '/' : 'https://jerhon.github.io/developer-notes/'
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-csharp.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-powershell.min.js"></script>
 </body>
 
 </html>

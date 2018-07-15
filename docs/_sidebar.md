@@ -1,25 +1,19 @@
 * architecture
   * [project-layout](architecture/project-layout.md)
 
-* computer-science
+* [**computer-science**](computer-science/readme.md)
   * [binary-trees](computer-science/binary-trees.md)
   * [linked-list](computer-science/linked-list.md)
 
-* docker
-  * [building-images](docker/building-images.md)
-  * [overview](docker/overview.md)
-  * [pushing-and-pulling-images](docker/pushing-and-pulling-images.md)
-  * [repositories](docker/repositories.md)
+* [**docker**](docker/readme.md)
+  * [images](docker/images.md)
 
 * github
   * [pages](github/pages.md)
 
-* hugo
-
-* mongodb
+* [**mongodb**](mongodb/readme.md)
   * [collections](mongodb/collections.md)
   * [queries](mongodb/queries.md)
-  * [readme](mongodb/readme.md)
   * [shell-cheat-sheet](mongodb/shell-cheat-sheet.md)
 
 * nodejs
@@ -28,13 +22,9 @@
 * powershell
   * [webservices](powershell/webservices.md)
 
-* react
-  * [readme](react/readme.md)
+* [**react**](react/readme.md)
 
-* redux
-  * [readme](redux/readme.md)
-
-* security
+* [**redux**](redux/readme.md)
 
 * sql-server
   * [copy-database](sql-server/copy-database.md)

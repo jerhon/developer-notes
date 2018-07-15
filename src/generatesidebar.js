@@ -7,17 +7,17 @@ var files = fs.readdirSync(basePath);
 files = files.filter((f) => fs.lstatSync(path.join(basePath, f)).isDirectory());
 
 fileLines = files.map((folder) =>  {
-    console.log(folder);
-    let headerLine = [ headerify(folder) ];
-
+    let lines = [ ];
     var mdfiles = fs.readdirSync(path.join(basePath, folder));
-    console.log(mdfiles);
+    var hasReadme = false;
     if (mdfiles) {
-        var mdLines = mdfiles.filter((md) => md).filter((md) => md.endsWith('.md')).map((md) => linkify(folder, md));
-        console.log(mdLines);
-        headerLine = headerLine.concat(mdLines);
+        let idx = mdfiles.indexOf('readme.md');
+        lines.push(headerify(folder, idx >= 0));
+        var mdLines = mdfiles.filter((md) => md).filter((md) => md.endsWith('.md') && md != "readme.md").map((md) => linkify(folder, md));
+        lines = lines.concat(mdLines);        
     }
-    return headerLine.join("\n") + "\n";
+
+    return lines.join("\n") + "\n";
 });
 
 fileText = fileLines.join('\n');
@@ -35,9 +35,13 @@ function nameify(filename) {
     return name;
 }
 
-function headerify(filename) {
-    var name = nameify(filename);
-    return "* " + name;
+function headerify(foldername, hasReadme) {
+    var name = nameify(foldername);
+    if (hasReadme) {
+        return "* [**" + name + "**](" + foldername + "/readme.md)";
+    } else {
+        return "* " + name;
+    }
 }
 
 function linkify(folder, filename) {
