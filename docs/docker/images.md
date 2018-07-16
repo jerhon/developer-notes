@@ -23,3 +23,20 @@ This is a sample dockerfile which can be used to build a Node.js application.
 ```Dockerfile
 TODO: add it here
 ```
+
+# Pushing Docker Images
+
+A docker image can be pushed to a repository.  This makes it available for others to access it and download it for use.  This requires an image to already be tagged with the repository's name.  Once it's tagged with the repository name, the image can be pushed with the push command.
+
+```
+docker push repository/image-name
+```
+
+# Pulling Docker Images
+
+Pulling a docker image downloads and stores an image locally from a remote repository.  While this operation will be done with the run command below if needed, pulling the image first can save time for the initial execution.  This is particularly useful for large images.  For example, the base windows OS docker images can be many GBs.  By fetching those images ahead of time, a new instance of the image can be started faster when it's created.
+
+# Docker Image Repositories
+
+Docker images are stored in repositories.  These provide a centralized place to download and manage images.  The most common registry to use is dockerhub.  It provides a cloud based location to find and 
+

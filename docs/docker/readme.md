@@ -1,6 +1,8 @@
 # Docker Overview
 
-Docker is a technology to create and run containers.  A container is a image that when executed run within an isolated environment in the OS.  Each image is comprised of several layers which are built upon each other which when stacked result in a running application.
+Docker is a technology to create and run containers.  A container is a image that is executed within an isolated environment within an OS.  Each image is comprised of several layers which are built upon each other which when stacked result in a running application.
+
+
 
 ## Why Docker?
 
@@ -14,7 +16,7 @@ Since all dependencies are included with the package, you don't have to worry ab
 
 ### Docker allows you to run your application in a standardized way.  
 
-Docker containers are all executed the same way with the run command, and can have management interfaces installed to manage them.  Building an application docker container allows you to distribute it to many different environments such as competeing cloud vendors, or internal environments vs external environments.
+Docker containers are all executed the same way with the run command, and can have management interfaces installed to manage them.  Building an application docker container allows you to distribute it to many different environments such as competing cloud vendors, or internal environments vs external environments.
 
 ### Docker simplifies sharing your applications.
 
@@ -22,7 +24,7 @@ Docker images are easily made available through docker registries.  Once an imag
 
 ### Docker makes it easier to move to the cloud.
 
-Many cloud services provide the ability to run docker containers.  Depending on the service, this can be simplier than having to provision an entire VM.
+Many cloud services provide the ability to run docker containers.  Depending on the service, this can be simpler than having to provision an entire VM.
 
 ## Why not docker?
 

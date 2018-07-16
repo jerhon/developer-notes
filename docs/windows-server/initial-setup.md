@@ -5,7 +5,7 @@ Some basic commands to get Windows Server off the ground running from the comman
 # Initial Configuration Steps
 
 ## Rename the Server
-Rename the computer to be whatever you want it to be rather than the genric made up name by Microsoft.  If you have a domain, you should have a naming convention for your machines.
+Rename the computer to be whatever you want it to be rather than the generic made up name by Microsoft.  If you have a domain, you should have a naming convention for your machines.
 
 ```powershell
 Rename-Computer -NewName "computernamehere"
