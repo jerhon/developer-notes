@@ -40,3 +40,12 @@ Pulling a docker image downloads and stores an image locally from a remote repos
 
 Docker images are stored in repositories.  These provide a centralized place to download and manage images.  The most common registry to use is dockerhub.  It provides a cloud based location to find and 
 
+# Cleaning up old images
+
+A lot of time after running docker for a while, you'll have images that have accumulated that you no longer use.  These don't automatically get deleted, but you can manually clean them up with the prune command.
+
+```
+docker images prune
+```
+
+This will remove any "dangling" images that are no longer being used.
