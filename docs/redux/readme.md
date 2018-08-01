@@ -41,15 +41,22 @@ The following diagram can explain the basics of how a state change occurs in rea
 
 ## Combining reducers in the Store
 
-TODO: fill this in...
+In many cases, a react application is not just a single reducer but a combination of many reducers.  The combineReducers function can take these multiple reducers and generate a common state from all of them.
+
+For example, this snippet would create a single reducer from two, and the underlying state object generated from the masterReducer would contain state from the two inner reducers.
+
+```javascript
+const masterReducer = combineReducers({
+  users,
+  widgets,
+});
+```
 
 ## Interaction with React.js
 
 react-redux is a common library that provides a method named connect which can be used to connect a component with the redux store.  
 
-Once you have implemented 
-
-
+Once you have implemented a component in React, you can use the connect API in order to connect it to the redux store.   This also requires setting up a Provider component at the base of your React application which injects the store throughout the React component tree when it is constructed.
 
 # Implementation
 
@@ -58,7 +65,33 @@ For a basic operation you need to implement:
 2. Some method which acts as the "Reducer" which changes that action into the actual state that will be in the "Store".  Using redux-thunk can simplify this process.
 3. Create the store with an initial state and the reducers. Reduxers can be combined via the combineReducers method.
 
-
 # Redux-Thunk
 
-TODO: fill this in
+One of the defficiencies of redux is that it doesn't allow for actions to be dispatched at a later time out of the box.  For example, say you have some asynchronous operation and only at the completion of the asynchronous operation should an action be dispatched to update the state of the redux store.
+
+Redux thunk provides middleware such that action creators can dispatch functions, thus dispatching at multiple times during an execution cycle.  Take for example this method, when it is called it is going to dispatch an action prior to calling 'theMethod'.  Once the method has completed, it will dispatch another action indicating it is complete.  If there is an error, it will dispatch a final action to indicate the error.
+
+This all sounds really complicated, but looking at code makes this a lot easier to grasp.
+
+```typescript
+export function invokeSomeMethodWithState() {
+    return (dispatch: Dispatch<IAction>) => {
+
+        dispatch({ type: ActionType.ASYNC_ACTION_START });
+
+        theMethod().then((result) => {
+
+            dispatch({ type: ActionType.ASYNC_ACTION_COMPLETE, someResult: result });
+
+        }).catch((err) => {
+
+            dispatch({ type: ActionType.ASYNC_ACTION_ERROR, error: err });
+
+        });
+    };
+}
+```
+
+You can actually see a pattern emerge which allows us to create a more generic structure around async actions like this that let's us track if an action is in progress, complete, or in an error state.  So, if you had a method returning a Promise you wished to track the progress of a general reducer could be built.
+
+TODO: add sample code for that here, or perhaps a GIST

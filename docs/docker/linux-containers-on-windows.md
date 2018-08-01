@@ -25,8 +25,9 @@ In previous versions of docker it was required to specify the platform for the i
 
 https://blog.docker.com/2017/09/docker-official-images-now-multi-platform/
 
-In short, the build command now is aware of platforms, and the images it produces now identify which platforms they run on.  Additionally, many of the base images in the docker repository now have 
+In short, the build command now is aware of platforms, and the images it produces now identify which platforms they run on.  Additionally, many of the base images in the docker repository now have be tagged with their respective platforms.
 
 # TODO(s)
 * Why is the linux VM still available?  Is it possible to delete this when using LCOW?
 * Does this work with docker compose?
+* Talk about advancements in Windows Server 2019 and the semi-annual release channel.

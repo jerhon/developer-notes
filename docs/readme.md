@@ -7,3 +7,5 @@ I had started a blog many years ago on WordPress.  However, I found that the blo
 Additionally, with this site, I'm trying to document information I've learned in order to keep it fresh and as a method to better learn and communicate it.
 
 The documentation is stored in github, and it can be distributed via a website.  The website is built through the tool [docsify](https://docsify.js.org).  The only piece that needs to be regenerated from time to time is the "_sidebar.md".  This is automatically generated via a script in the src folder.
+
+[Generated Website](https://jerhon.github.io/developer-notes)
