@@ -20,6 +20,13 @@ One tricky thing, if you are using custom paths at all in say the tsconfig.json 
 --require tsconfig-paths/register
 ```
 
+If you get an error indicating "TypeError: mocha_1.describe is not a function", you more than likely don't have the types for mocha installed: "yarn add @types/mocha --dev" 
+
+# Full Config
+```
+--require ts-node/register
+test\**\*test.ts
+```
 
 # References
 
