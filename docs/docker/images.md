@@ -9,7 +9,7 @@ docker build -t application-name .
 Typically each image is tagged with one or more tags.  The tags can be used to describe the image.  They are also used to denote a repository the images can pushed to.
 
 ```
-docker build -t myrepository/application-name .
+docker build -t myrepository:port/application-name .
 ```
 
 When Dockerfiles are structured, they usually are built with a base image.  Additional layers are stacked on top of that base image by running commands in the Docker file.  For example, copying new files into an image would create an additional layer in which those files are stored. This makes storage of containers very efficient.  
@@ -40,3 +40,12 @@ Pulling a docker image downloads and stores an image locally from a remote repos
 
 Docker images are stored in repositories.  These provide a centralized place to download and manage images.  The most common registry to use is dockerhub.  It provides a cloud based location to find and 
 
+# Cleaning up old images
+
+A lot of time after running docker for a while, you'll have images that have accumulated that you no longer use.  These don't automatically get deleted, but you can manually clean them up with the prune command.
+
+```
+docker images prune
+```
+
+This will remove any "dangling" images that are no longer being used.

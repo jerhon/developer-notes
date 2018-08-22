@@ -61,5 +61,3 @@ And finally, the queue is gone, because the application crashed due to being out
 The problem was resolved in a few ways.
 1. Always use asynchronous operations when possible.  The only way to multi-thread in Node.js is to try farm operations off with asynchronous calls.  This is especially true of calls that are bound to some resource like I/O or CPU.
 2. Results from the database should always either have a limit in processing, or an implementation such as the Bluebird APIs for arrays of Promises should be used.  Another option is streaming, but only if it limits the number of items being concurrently executed.
-
-
