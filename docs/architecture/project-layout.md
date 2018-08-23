@@ -64,9 +64,7 @@ If there is a navigation system in the UI, such as a single page application, or
 
 This typically was just a given in the past for web applications when they had many HTML pages.  However, now that we've entered the realm of single page applications, this is easier in today's day and age to misrepresent.
 
-
-
-## Seperate only base components to a common folder
+## Separate base components to a common folder
 
 If a component is something that is considered a common or base component, then move it to a shared folder.  For example, a component exposing a special flavor of a text box.  If it can be reused, it's good to put it someplace were reuse will occur.
 
