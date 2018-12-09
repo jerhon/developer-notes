@@ -1,4 +1,5 @@
-site_name: honlSoft Developer Documents
-nav: 
-  - Home:index.html
+site_name: honlSoft Developer Documentation
+repo_url: https://gitlab.com/jerhon/developer-notes
+site_url: https://jerhon.gitlab.io/developer-notes
+site_author: Jeremy Honl
 theme: readthedocs
