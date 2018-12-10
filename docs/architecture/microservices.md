@@ -33,18 +33,34 @@ When building a microservice architecture there are many patterns that come into
 
 ## API Gateway
 
-The typical problem with the microservice model is that a number of services now become available where previous one endpoint was.  To remedy this, an API Gateway is often used as a singular endpoint into the system.
+The typical problem with the microservice model is that a number of services becomes unmanagable or requires multiple connections to different servers.
+To remedy this, an API Gateway is often used as a single endpoint into the system.
+This reduces the number of endpoints that need to be exposed, and simplifies client connections.
+
+An API Gateway will combine a reverse proxy and a router.
+
 
 ### Advantages
-* Since there is a singlar endpoint, there is a singluar point all requests must go through this allows
-  * Request / response tracking
-  * A centralized point to obtain and verify security
-  * Design patterns such as circuit breakers, load balancing, routing
 
+* Request / response tracking
+* A centralized point for security
+* Design patterns such as circuit breakers 
+* Load balancing 
+* Routing
 
-## Disadvantages
-* This provides an additional integration into the system with added complexity
+### Disadvantages
+
+* This increases the number of required integrations in the system, thus increasing complexity
 * Configurations of services need to be managed with their deployment
 * Services need to be kept track of (this can be mitigated by utilizing service discovery)
 
 ## Service Discovery
+
+Service discovery is the automatic detection of one or more services.
+Typically, rather than having to register a service at a central administration interface, the registration of services is handled either by the service itself or a seperate discovery is run to detect the services.
+
+### Advantages
+* Automatic registration simplifies deployment
+
+### Disadvantages
+* Couples the service to a particular service descovery technology.
