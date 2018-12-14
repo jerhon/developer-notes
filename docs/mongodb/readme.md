@@ -2,7 +2,7 @@
 
 MongoDB is a document based database system that has gained a lot of popularity.
 
-# Why MongoDB?
+## Why MongoDB?
 
 * Horizontal architecture
 * Cloud ready, hosted MongoDB instances are available and Microsoft's big cloud databases support MongoDB interoperatability (CosmosDB).
@@ -10,13 +10,13 @@ MongoDB is a document based database system that has gained a lot of popularity.
 * Cross platform, and comes as a docker container
 
 
-# Why not MongoDB?
+## Why not MongoDB?
 
 * Multi-document transactions are not possible.  However, this will be remedied in an upcoming 4.0 release of the software.
 * Just because the database doesn't enforce a schema, this doesn't mean that it has no schema.  Every set of data has some schema defining it.  
 
 
-# Misconceptions
+## Misconceptions
 
 These are things I've heard:
 

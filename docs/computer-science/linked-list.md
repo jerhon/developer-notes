@@ -1,4 +1,4 @@
-# Linked List Overview
+# Linked Lists
 
 Some tips and tricks to make linked list problems easier to solve.
 

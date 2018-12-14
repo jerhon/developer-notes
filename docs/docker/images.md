@@ -1,6 +1,10 @@
-# Building Docker Images
+# Docker Images
 
-Building a docker image requires creating a Dockerfile which describes how the image is to be built and the commands required in order to run the image.
+
+
+## Building Docker Images
+
+Building a docker image requires creating a Dockerfile which describes how the image is built and the commands to execute the application within the image.
 
 ```
 docker build -t application-name .
@@ -16,7 +20,7 @@ When Dockerfiles are structured, they usually are built with a base image.  Addi
 
 For example, let's say you made two different applications that rely on a base image that provides Node.js.  If you distribute the application as a docker container and rely on the same base image for Node.js, the applications could rely on that same base image with their specific code layered on top.
 
-## Sample Dockerfile
+### Sample Dockerfile
 
 This is a sample dockerfile which can be used to build a Node.js application.
 
@@ -24,23 +28,25 @@ This is a sample dockerfile which can be used to build a Node.js application.
 TODO: add it here
 ```
 
-# Pushing Docker Images
+## Pushing Docker Images
 
-A docker image can be pushed to a repository.  This makes it available for others to access it and download it for use.  This requires an image to already be tagged with the repository's name.  Once it's tagged with the repository name, the image can be pushed with the push command.
+A docker image can be pushed to a registry.  A docker registry is a system to store and distribute docker images.
+
+This makes it available for others to access it and download it for use.  This requires an image to already be tagged with the repository's name.  Once it's tagged with the repository name, the image can be pushed with the push command.
 
 ```
 docker push repository/image-name
 ```
 
-# Pulling Docker Images
+## Pulling Docker Images
 
 Pulling a docker image downloads and stores an image locally from a remote repository.  While this operation will be done with the run command below if needed, pulling the image first can save time for the initial execution.  This is particularly useful for large images.  For example, the base windows OS docker images can be many GBs.  By fetching those images ahead of time, a new instance of the image can be started faster when it's created.
 
-# Docker Image Repositories
+## Docker Image Repositories
 
 Docker images are stored in repositories.  These provide a centralized place to download and manage images.  The most common registry to use is dockerhub.  It provides a cloud based location to find and 
 
-# Cleaning up old images
+## Cleaning up old images
 
 A lot of time after running docker for a while, you'll have images that have accumulated that you no longer use.  These don't automatically get deleted, but you can manually clean them up with the prune command.
 

@@ -1,14 +1,15 @@
-# Docker Overview
+# Docker
 
-Docker is a technology to create and run containers.  A container is a image that is executed within an isolated environment within an OS.  Each image is comprised of several layers which are built upon each other which when stacked result in a running application.
+Docker is a technology to create and run containers.  A container is a image that is executed within an isolated environment on an operating system.  
+
+Containers provide much greater isolation than traditional applications.  The processes run in isolation from all others    
+
+Each image is comprised of several layers which are built upon each 
+other which when stacked result in a running application.
 
 
-
-## Why Docker?
-
-### Docker allows you to bundle all your dependencies.  
-
-If you can run your docker container on one instance of docker, it should be able to run on any docker instance of the same processor platform.  Running it on additional processor platforms may depend on how you
+### Bundles all your dependencies.  
+One of the primary advantages of docker is bundling of dependencies into a image.  Once an image is create   If you can run your docker container on one instance of docker, it should be able to run on any docker instance of the same processor platform.  Running it on additional processor platforms may depend on how you
 
 ### Docker simplifies dependency issues.
 

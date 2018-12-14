@@ -3,7 +3,7 @@
 Microsoft .NET has been around for many years and seen may leaps and bounds since it's introduction.  It's Microsoft's defacto platform for building software and applications.
 
 
-## .NET Framework vs .NET Core
+## .NET Framework vs .NET Core vs .NET Standard
 
 In the early days of .NET to build an application you would use the .NET framework and pick a language of your choice.  In recent years Microsoft has shifted focus to .NET Core and .NET Standard.  These can get somewhat confusing early on, but really what you use depends on what you plan to build.
 

@@ -1,4 +1,4 @@
-# Binary Tree Overview
+# Binary Trees
 
 A binary tree is a tree where each node contains two child nodes. Commonly the two nodes are referred to as a left and right node.  Each node can have a value associated with it.
 
