@@ -2,20 +2,20 @@
 
 When working with node.js there are a few things to keep in mind in regard to performance and the threading model.
 
-# Threading
+## Threading
 
 Node.js has a single threaded event-loop that can farm asynchronous calls off to a thread pool.
 
-# Node.js is not good for CPU bound programming
+## Node.js is not good for CPU bound programming
 
 Unless you are doing out of the ordinary, the code you write in a Node.js application will always run in the same thread with the exception of asynchronous calls.  This means you don't have to worry about things like locking.  However, this also means if you block in any portion of your code, this will prevent any other code from running.  In instances where an application is simply moving data from one source to another, such as a database through an API, this is not much of a concern.  For heavy analytical applications that need to do CPU processing, Node.js probably isn't the best environment.
 
-# Node.js does simplify resource access (kind of)
+## Node.js does simplify resource access (kind of)
 
 Much of multi-threaded programming is dedicated to shared usage of resources.  Much work needs to be done to keep shared resources thread safe so that if multiple threads are accessing them, there are no unintended consequences.  
 
 
-# ALWAYS avoid synchronous code when asynchronous is available.
+## ALWAYS avoid synchronous code when an asynchronous pattern is available
 
 A recent example of a situation where I ran into severe performance degradation was working through a large set of records where each record had a good chunk of data compressed.  The coder had written a block of code whereby a large set of records was to be decompressed all at once.  The code was using the zlib built-in library, but with synchronous calls to decompress the data.  The decompression itself was done within an async method.  The code had a collection of rows, and made a call to iterate through all the rows and wait for all the promises to complete.
 

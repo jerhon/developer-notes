@@ -3,6 +3,7 @@ repo_url: https://gitlab.com/jerhon/developer-notes
 site_url: https://jerhon.gitlab.io/developer-notes
 site_author: Jeremy Honl
 theme:
+  logo: 'images/honlSoft_white.svg'
   name: material
 
 markdown_extensions:

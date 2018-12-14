@@ -1,9 +1,9 @@
-# Overview
+# Microsoft .NET
 
 Microsoft .NET has been around for many years and seen may leaps and bounds since it's introduction.  It's Microsoft's defacto platform for building software and applications.
 
 
-# .NET Framework vs .NET Core
+## .NET Framework vs .NET Core
 
 In the early days of .NET to build an application you would use the .NET framework and pick a language of your choice.  In recent years Microsoft has shifted focus to .NET Core and .NET Standard.  These can get somewhat confusing early on, but really what you use depends on what you plan to build.
 
@@ -16,13 +16,11 @@ In the early days of .NET to build an application you would use the .NET framewo
 
 .NET Standard is a specification of programming interfaces .NET Core and .NET Framework must adhere too.  This gives application developers the ability to write a .NET library targeting .NET Standard so it can run on either the .NET Framework or .NET Core.  Different versions of the two technologies implement different versions of .NET Standard.
 
-# Getting Started
+## Creating a Project
 
 The easiest way to build a .NET application is via creating a project or solution in Visual Studio.  This has always been the case.  
 
 However, for us power users out there, with .NET core there is a new command line utility (dotnet) that allows us to create these solutions from the commandline. 
-
-## Get a List of Templates
 
 The following command will give you a list of templates for .NET projects.  Think of this like Visual Studio's project wizard on the commandline.
 
@@ -30,7 +28,7 @@ The following command will give you a list of templates for .NET projects.  Thin
 dotnet new
 ```
 
-## Create a New Project
+This command would create a new console project.
 
 ``` 
 dotnet new console
