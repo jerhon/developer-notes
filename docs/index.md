@@ -13,3 +13,7 @@ The website is built through the tool mkdocs.
 It is built in a GitLab CI pipeline hosted in GitLab pages.
 
 [Generated Website](https://jerhon.gitlab.io/developer-notes)
+
+# Source Code
+
+For examples that contain sizeable portions source code, the source code can be found in the src directory in the main project. 
