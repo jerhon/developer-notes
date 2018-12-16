@@ -2,7 +2,12 @@ using System;
 
 namespace honlSoft.Patterns.Factory {
     
-    public class VehicleFactory {
+    /// <summary>
+    /// This class is an example of a simple Factory.  The factory returns an object implementing the interface IVehicle that can travel with the specified method.
+    /// </summary>
+    public class VehicleFactory : IVehicleFactory {
+        
+        
         public IVehicle CreateVehicle(TravelMethod howToTravel) {
             switch (howToTravel) {
                 case TravelMethod.Drive:
