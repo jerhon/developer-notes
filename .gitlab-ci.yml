@@ -33,7 +33,7 @@ docker:
 # master branches will have :latest as image tag
 
 release-by-name:
-  image: docker:lastest
+  image: docker:latest
   stage: release
   services:
     - docker:dind
