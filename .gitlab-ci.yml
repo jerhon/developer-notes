@@ -1,17 +1,62 @@
-image: python:alpine
 
-before_script:
-  - pip install mkdocs
-  - pip install mkdocs-material
-  - pip install pygments
-  - pip install pymdown-extensions
 
-pages:
+# build the design patterns to make sure they can build
+# these aren't published anywhere
+design-paterns:
+  image: microsoft/dotnet:latest
+  stage: build
   script:
-  - mkdocs build
-  - mv site public
+    - cd ./src/design-patterns
+    - dotnet restore
+    - dotnet test
+    - dotnet build
+
+# build the main docker image for deployment
+docker:
+  image: docker
+  stage: build
+  before_script: 
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+  script: 
+    - docker build --pull -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF .
+    - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF
+
+# RELEASE
+# ------------------------------------
+# non-master branches will use :ref_name as image tag
+# master branches will have :latest as image tag
+
+release-by-name:
+  stage: release
+  script:
+    - docker pull $CI_REGISTRY_IMAGE:$CI_BUILD_REF
+    - docker tag $CI_REGISTRY_IMAGE:$CI_BUILD_REF $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
+    - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF
+  except:
+    - master
+
+release-lastest:
+  stage: release
+  script:
+    - docker pull $CI_REGISTRY_IMAGE:$CI_BUILD_REF
+    - docker tag $CI_REGISTRY_IMAGE:$CI_BUILD_REF $CI_REGISTRY_IMAGE:latest
+    - docker push $CI_REGISTRY_IMAGE:latest
+  only:
+    - master
+
+# deploys to gitlab pages
+pages:
+  image: python:alpine
+  before_script:
+    - pip install mkdocs
+    - pip install mkdocs-material
+    - pip install pygments
+    - pip install pymdown-extensions
+  script:
+    - mkdocs build
+    - mv site public
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    - master
