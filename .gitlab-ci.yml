@@ -1,4 +1,5 @@
 stages:
+  - pages
   - build
   - test
   - release
@@ -16,7 +17,7 @@ design-paterns:
 
 # build the main docker image for deployment
 docker:
-  image: docker
+  image: docker:dind
   stage: build
   before_script: 
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
@@ -30,6 +31,7 @@ docker:
 # master branches will have :latest as image tag
 
 release-by-name:
+  image: docker:dind
   stage: release
   script:
     - docker pull $CI_REGISTRY_IMAGE:$CI_BUILD_REF
@@ -39,6 +41,7 @@ release-by-name:
     - master
 
 release-lastest:
+  image: docker:dind
   stage: release
   script:
     - docker pull $CI_REGISTRY_IMAGE:$CI_BUILD_REF
@@ -50,6 +53,7 @@ release-lastest:
 # deploys to gitlab pages
 pages:
   image: python:alpine
+  stage: pages
   before_script:
     - pip install mkdocs
     - pip install mkdocs-material
