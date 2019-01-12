@@ -5,11 +5,11 @@ namespace honlSoft.Patterns.Factory {
     public class VehicleFactoryTests {
 
         [Fact]
-        public void VehicleFactory_CreateVehicle_driveCreatesCar() {
+        public void CreateVehicle_driveCreatesCar() {
             VehicleFactory factory = new VehicleFactory();
             var driveVehicle = factory.CreateVehicle(TravelMethod.Drive);
             Assert.NotNull(driveVehicle);
-            Assert.IsType(typeof(Car), driveVehicle);
+            Assert.IsType<Car>(driveVehicle);
         }
 
         [Fact]
@@ -17,7 +17,7 @@ namespace honlSoft.Patterns.Factory {
             VehicleFactory factory = new VehicleFactory();
             var flyVehicle = factory.CreateVehicle(TravelMethod.Fly);
             Assert.NotNull(flyVehicle);
-            Assert.IsType(typeof(Plane), flyVehicle);
+            Assert.IsType<Plane>(flyVehicle);
         }
 
         [Fact]
