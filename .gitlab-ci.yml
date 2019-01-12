@@ -1,4 +1,7 @@
-
+stages:
+  - build
+  - test
+  - release
 
 # build the design patterns to make sure they can build
 # these aren't published anywhere
