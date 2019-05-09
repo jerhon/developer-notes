@@ -2,6 +2,13 @@
 
 IP tables is a service to configure netfilter.  It can be used as a way to filter traffic going in and out of a linux PC.  It's most common usage is as a firewall.
 
+IP tables works as set of "Chains" where each chain is used as a set of rules that accept or reject network traffic.
+
+The main chains are
+* INPUT - Defines traffic coming into the machine.
+* FORWARD - Defines traffic being routed through the machine.  Most common example is through docker.
+* OUTPUT - Defines traffic going out of the machine.
+
 ## Cheatsheet: iptables
 
 A set of commands to use with iptables.
@@ -11,7 +18,8 @@ A set of commands to use with iptables.
 |iptables -L |List all iptables rules. |
 |iptables -N CHAIN_NAME | Create a new IPtables chain |
 |iptables -A INPUT -j CHAIN_NAME| Links data to the new chain |
-|iptables -A INPUT -s IP_GOES_HERE/32 -p tcp -m tcp --dport PORT_GOES_HERE -m comment --comment "accepting a specific port from a specific IP" -j ACCEPT| Add a specific port from a specific IP.  Note the comment block to add a comment so it's easy to understand the rue.|
+|iptables -A INPUT -s IP_GOES_HERE/32 -p tcp -m tcp --dport PORT_GOES_HERE -m comment --comment "accepting a specific port from a specific IP" -j ACCEPT| Add a specific port from a specific IP.  Note the comment block to add a comment so it's easy to understand the rule.|
+|iptables -I INPUT 1 ~~~~| Inserts a rule at the begining of a chain such as INPUT|
 
 ### Common IP Tables Flags
 
@@ -53,6 +61,8 @@ This preserves the iptables in CentOS on reboot.
 iptables-save > /etc/sysconfig/iptables
 ```
 
+Make sure to install the iptables-services yum package
+
 ### Ubuntu
 
 This preserves the iptables in Ubuntu
@@ -61,7 +71,4 @@ This preserves the iptables in Ubuntu
 iptables-save > /etc/iptables/rules.v4
 ```
 
-
-## Installation
-
-TBD
+## NAT vs Filter rules vs ...
