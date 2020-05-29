@@ -33,3 +33,24 @@ This command would create a new console project.
 ``` 
 dotnet new console
 ```
+
+## Common Development Commands
+
+Many of the commands to use with .NET Core are fairly straightforward to use.
+
+To Build:
+````
+dotnet build
+````
+
+To Test:
+````
+dotnet test
+````
+
+To Create a Solution File:
+````
+
+````
+
+## Managing a Solution

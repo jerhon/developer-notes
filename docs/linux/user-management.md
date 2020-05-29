@@ -28,7 +28,7 @@ passwd <username>
 
 
 ## Add user to group
-* wheel = similar administrator in linux world the user has access to su and sudo
+* wheel = similar administrator in linux world the user has access to sudo
 * docker = the group to manage docker and containers
 
 ```bash

@@ -8,6 +8,8 @@ By hosting this in a GIT controlled repository, I can keep things up to date, an
 
 Additionally, I'm trying to document helpful information in order to keep it fresh and as a method to learn and communicate it.
 
+Some pages will be well thought out, while others may simply be nothing more than a listing of commands used for tasks.
+
 The documentation is stored in GitLab, and it can be distributed via a website.
 The website is built through the tool mkdocs.
 It is built in a GitLab CI pipeline hosted in GitLab pages.
